@@ -38,7 +38,7 @@ The proposed changes include an increase in the block gas limit to `NEW_BLOCK_GA
 
 ## Rationale
 
-The maximum block size currently stands at 1,875 MB (`30_000_000/16`), increasing to ~2.625 MB with EIP-4844 going live.  
+The maximum block size currently stands at ~1.727 MB (`30_000_000/16`), increasing to ~2.48 MB with EIP-4844 going live.  
 With the implentation of EIP-4844, calldata may stop being the best candidate for publishing data.
 With this proposal, by repricing nonzero calldata bytes to 42 gas each, we aim to reduce the maximum possible block size to approximately 1 MB. 
 This reduction makes room for increasing the number of blobs, while ensuring network security and efficiency. 
