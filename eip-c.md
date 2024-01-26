@@ -30,8 +30,8 @@ By increasing the gas costs for nonzero calldata bytes, the proposal aims to bal
 | Parameter | Value |
 | - | - |
 | `NEW_CALLDATA_GAS_COST` | `42` |
-| `NEW_BLOCK_GAS_LIMIT` | `45_000_000 |
-| `NEW_BLOCK_GAS_TARGET` | `22_500_000 |
+| `NEW_BLOCK_GAS_LIMIT` | `45_000_000` |
+| `NEW_BLOCK_GAS_TARGET` | `22_500_000` |
 
 The proposed changes include an increase in the block gas limit to `NEW_BLOCK_GAS_LIMIT` and setting the EIP-1559 target to `NEW_BLOCK_GAS_TARGET`.
 
