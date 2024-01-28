@@ -21,7 +21,9 @@ This is achieved through adjusting calldata pricing, particularly for nonzero by
 The block gas hasn't been increased since EIP-1559, while the average size of blocks has continuously increased due to the growing number of rollups posting data to Layer 1. 
 EIP-4844 introduces blobs as a preferred method for data availability, signaling a shift away from calldata-dependent strategies. 
 This transition demands a reevaluation of calldata pricing. 
-By increasing the gas costs for nonzero calldata bytes, the proposal aims to balance the need for higher block gas limits with the necessity of reducing the maximum block size to make room for adding more blobs.
+By increasing the gas costs for nonzero calldata bytes, the proposal aims to balance the need for higher block gas limits with the necessity of reducing the maximum block size to make room for adding more blobs. The move from using calldata for data availability to blobks further strenghens the multidimensional fee market by incentivicing blob space.
+
+Increasing calldata costs to 42.0 gas saves ~0.75 MB, the equivalent of 6 blobs.
 
 
 
@@ -38,14 +40,13 @@ The proposed changes include an increase in the block gas limit to `NEW_BLOCK_GA
 
 ## Rationale
 
-The maximum block size currently stands at ~1.727 MB (`30_000_000/16`), increasing to ~2.48 MB with EIP-4844 going live.  
+The maximum block size currently stands at ~1.79 MB (`30_000_000/16`), increasing to ~2.54 MB with EIP-4844 going live.  
 With the implentation of EIP-4844, calldata may stop being the best candidate for publishing data.
 With this proposal, by repricing nonzero calldata bytes to 42 gas each, we aim to reduce the maximum possible block size to approximately 1 MB. 
 This reduction makes room for increasing the number of blobs, while ensuring network security and efficiency. 
 
 The proposed gas limit increase to `NEW_BLOCK_GAS_LIMIT` is justified as it does not compromise security due to the accompanying decrease in maximum block size, especially considering the ongoing advancements in hardware accessibility and cost-effectiveness. 
 Therefore, the described approach is preferred over a naive gas limit increase.
-
 
 
 
